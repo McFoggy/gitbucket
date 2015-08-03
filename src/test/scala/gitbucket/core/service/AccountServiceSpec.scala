@@ -36,7 +36,7 @@ class AccountServiceSpec extends Specification with ServiceSpecBase {
       val date1 = new Date
       AccountService.updateLastLoginDate(root)
       user().lastLoginDate must beSome.like{ case date =>
-        date must be_>(date1)
+        date must be_>=(date1)
       }
       val date2 = new Date
       Thread.sleep(1000)
